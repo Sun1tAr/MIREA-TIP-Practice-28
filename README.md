@@ -332,85 +332,40 @@ Body:
 ### Коллекция Postman для тестирования
 
 Коллекция Postman доступна по [ссылке](https://www.postman.com/lively-flare-564043/workspace/learning/collection/42992055-a22ab010-4a8a-43a3-a625-8a854389e866?action=share&source=copy-link&creator=42992055)
+
 ### 1. REST: Получение списка задач
 
-**Ожидаемый результат:** Статус 200 OK, массив задач с полями id, title, description, done
-
-![rest-list](about/rest-list.png)
+![img.png](about/img.png)
 
 ### 2. REST: Получение детали задачи
 
-**Ожидаемый результат:** Статус 200 OK, объект задачи с полями id, title, description, done
-
-![rest-detail](about/rest-detail.png)
+![img_1.png](about/img_1.png)
 
 ### 3. REST: Создание задачи
 
-**Ожидаемый результат:** Статус 201 Created, созданная задача
-
-![rest-create](about/rest-create.png)
+![img_2.png](about/img_2.png)
 
 ### 4. REST: Ошибка 404 (задача не найдена)
 
-**Ожидаемый результат:** Статус 404 Not Found
-
-![rest-404](about/rest-404.png)
+![img_3.png](about/img_3.png)
 
 ### 5. GraphQL: Получение списка задач (только нужные поля)
 
-**Ожидаемый результат:** HTTP 200, в data.tasks массив с полями id, title, done
+![img_4.png](about/img_4.png)
 
-![gql-list](about/gql-list.png)
+![img_5.png](about/img_5.png)
 
 ### 6. GraphQL: Получение детали задачи
 
-**Ожидаемый результат:** HTTP 200, в data.task объект с id, title, description, done
-
-![gql-detail](about/gql-detail.png)
+![img_8.png](about/img_8.png)
 
 ### 7. GraphQL: Создание задачи
 
-**Ожидаемый результат:** HTTP 200, в data.createTask созданная задача
-
-![gql-create](about/gql-create.png)
+![img_7.png](about/img_7.png)
 
 ### 8. GraphQL: Ошибка (задача не найдена)
 
-**Ожидаемый результат:** HTTP 200, поле errors с описанием, data.task = null
-
-![gql-error](about/gql-error.png)
-
-### 9. GraphQL: Сравнение объёма ответа
-
-**REST список задач:**
-```json
-[
-  {
-    "id": "t_1",
-    "title": "Task 1",
-    "description": "Description 1",
-    "due_date": "",
-    "done": false
-  }
-]
-// Размер: ~120 байт на задачу
-```
-
-**GraphQL список задач:**
-```json
-{
-  "data": {
-    "tasks": [
-      {
-        "id": "t_1",
-        "title": "Task 1",
-        "done": false
-      }
-    ]
-  }
-}
-// Размер: ~80 байт на задачу (экономия ~33%)
-```
+![img_6.png](about/img_6.png)
 
 ---
 

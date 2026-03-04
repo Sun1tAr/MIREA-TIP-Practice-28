@@ -19,7 +19,7 @@ COPY vendor ./vendor
 COPY . .
 
 # Build the application using vendor
-RUN CGO_ENABLED=0 GOOS=linux go build -o /app/bin/tasks ./cmd/tasks
+RUN CGO_ENABLED=0 GOOS=linux go build -o /app/bin/auth ./cmd/auth
 
 # Stage 2: Final image
 FROM alpine:latest
@@ -34,7 +34,7 @@ RUN adduser -D -u 1000 appuser
 WORKDIR /app
 
 # Copy binary from builder
-COPY --from=builder --chown=appuser:appuser /app/bin/tasks /app/tasks
+COPY --from=builder --chown=appuser:appuser /app/bin/auth /app/auth
 
 # Switch to non-root user
 USER appuser
@@ -43,4 +43,4 @@ USER appuser
 EXPOSE 8082
 
 # Command to run
-CMD ["/app/tasks"]
+CMD ["/app/auth"]
